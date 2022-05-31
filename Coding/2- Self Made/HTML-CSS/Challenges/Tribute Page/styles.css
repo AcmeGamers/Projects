@@ -1,0 +1,264 @@
+/* Body */
+body {
+  background-color: lightgoldenrodyellow;
+}
+
+/* Text Area */
+#title {
+  text-align: center;
+  color: white;
+  padding: 44px 0 44px 30px;
+  font-size: 25px;
+  background-color: black;
+}
+
+#para1 {
+  animation-name: fadeEffect;
+  animation-duration: 1s;
+  padding-left: 30px;
+  position: relative;
+  color: black;
+  top: -6px;
+}
+
+#Information {
+  padding-left: 30px;
+  animation-name: fadeEffect;
+  animation-duration: 1s;
+  position: relative;
+  align-items: block;
+  color: black;
+}
+
+.Information-def {
+  background-color: white;
+  wdith: 150px;
+  height: 1000px;
+  position: relative;
+  top: -240px;
+  bottom: 130px;
+}
+
+#History {
+  color: white;
+  padding: 26px 0 26px 30px;
+  font-size: 25px;
+  /* font-size: 300px; */
+  background-color: black;
+}
+
+#footer {
+  font-size: 23px;
+  padding: 8px;
+  border-radius: 11px;
+  position: absolute;
+}
+/* Boxes */
+#box {
+  position: sticky;
+  bottom: 100px;
+  margin: 120px 100px;
+  height: 340px;
+  width: 300px;
+  border-radius: 45%;
+}
+
+#box1 {
+  position: relative;
+  bottom: 100px;
+  top: -255px;
+  left: 554px;
+  height: 340px;
+  width: 300px;
+  border-radius: 45%;
+}
+
+/* Images */
+#image {
+  max-width: 597px;
+  /*width: 400px;*/
+  height: auto;
+  border-radius: 12px;
+  z-index: 1;
+  object-fit: cover; /* fill */
+  border: 8px solid #bbb9b7;
+  top: 5px;
+  left: 100px;
+  position: sticky;
+  transition: 1s ease all;
+}
+
+#img-div {
+  display: grid;
+  place-items: center;
+  animation-name: fadeEffect;
+  animation-duration: 1s;
+  justify-content: center;
+}
+
+#img-caption {
+  background-color: #292727;
+  position: relative;
+  bottom: 52px;
+  padding: 10px;
+  width: 171px;
+  color: #ead9d9;
+  z-index: 1;
+  right: -214px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* The history Timeline */
+.historyTimeline {
+  background-color: #c1c1c1;
+  max-width: 393px;
+  border-radius: 26px;
+  margin: 12px;
+  padding: 12px;
+  position: static;
+  font-size: 16px;
+  margin-left: 30px;
+  transition: 1s ease all;
+  border-left: 4px solid #798286;
+}
+
+/* The line 
+#Timeline{  
+    position: absolute;
+    background-color: #827b7b;
+    height: 1080px;
+    width: 13px;
+    top: 897px;
+    align-self: center;
+}*/
+
+li {
+  list-style: none;
+  border-left: solid;
+  transition: 1s ease all;
+}
+
+a {
+  color: #0d61a9;
+  transition: 1s ease all;
+}
+
+/* Animations */
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.historyTimeline:hover {
+  margin-left: 40px;
+}
+
+img:hover {
+  transform: scale(1.034);
+}
+
+li:hover {
+  padding-left: 5px;
+}
+
+a:hover {
+  color: #b74c00;
+}
+
+/* Media Query
+@media (min-width:2400px){
+#Timeline{  
+    position: absolute;
+    background-color: #827b7b;
+    height: 1080px;
+    width: 13px;
+    top: 897px;
+    align-self: center;
+}
+
+@media (min-width:1130px){
+ #Timeline{  
+    position: absolute;
+    background-color: #827b7b;
+    height: 1080px;
+    width: 13px;
+    top: 897px;
+    align-self: center;
+   
+} 
+}
+
+@media (min-width:855px){
+ #Timeline{  
+    position: absolute;
+    background-color: #827b7b;
+    height: 1080px;
+    width: 13px;
+    top: 897px;
+    align-self: center;
+} 
+}
+
+@media (min-width:855px){
+ #Timeline{  
+    position: absolute;
+    background-color: #827b7b;
+    height: 1080px;
+    width: 13px;
+    top: 914px;
+    align-self: center;
+} 
+}
+
+@media (min-width:703px){
+ #Timeline{  
+    position: absolute;
+    background-color: #827b7b;
+    height: 1080px;
+    width: 13px;
+    top: 930px;
+    align-self: center;
+} 
+}
+
+@media (min-width:696px){
+ #Timeline{  
+    position: absolute;
+    background-color: #827b7b;
+    height: 1080px;
+    width: 13px;
+    top: 933px;
+    align-self: center;
+} 
+}
+
+
+@media (min-width:855px){
+ #Timeline{  
+    position: absolute;
+    background-color: #827b7b;
+    height: 1080px;
+    width: 13px;
+    top: 914px;
+    align-self: center;
+} 
+}
+
+
+
+@media (min-width:855px){
+ #Timeline{  
+    position: absolute;
+    background-color: #827b7b;
+    height: 1080px;
+    width: 13px;
+    top: 914px;
+    align-self: center;
+} 
+}
+ */
