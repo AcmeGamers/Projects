@@ -1,0 +1,74 @@
+:root {
+  --color-white: #fff5f5;
+}
+
+/* Body */
+body {
+  background: url(https://cdn.discordapp.com/attachments/741856312564121720/743745059609903185/d06lc8b3bj831.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position-x: center;
+}
+
+/* Complete forum */
+#title,
+#description {
+  text-align-last: center;
+}
+.Text {
+  color: #fff5f5;
+}
+#aka {
+  outline: none;
+  top: 54px;
+  opacity: 0.89;
+  padding: 28px 50px;
+  background-color: #ad8d8d;
+  position: absolute;
+  right: 25%;
+  border-radius: 12px;
+  left: 25%;
+  transition: 1s ease all;
+}
+#aka:hover {
+  opacity: 1;
+}
+.Naming-Areas {
+  font-family: ariel;
+  font-size: 17px;
+  margin: 0px 0px 0px -12px;
+  color: #fff5f5;
+}
+
+.place-holders {
+  width: 100%;
+  border: 2px solid antiquewhite;
+  border-radius: 6px;
+  margin: 3px 10px 14px -12px;
+  padding: 9px 0px 9px 11px;
+}
+
+#Comment-Section {
+  padding: 10px 0px 91px 12px;
+  width: 100%;
+  border-radius: 12px;
+  border-color: antiquewhite;
+  margin: 3px 10px 14px -12px;
+}
+
+/* The outline */
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+#submit {
+  padding: 12px;
+  margin: 8px 0px 0px 0px;
+  width: 100%;
+  transition: 1s ease all;
+  border-radius: 12px;
+}
+#submit:hover {
+  box-shadow: 7px 6px 10px;
+}

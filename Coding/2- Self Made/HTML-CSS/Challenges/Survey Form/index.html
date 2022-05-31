@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey Form</title>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </head>
+  <body>
+    <main id="aka">
+      <!-- Title and discription -->
+      <h1 id="title" class="Text">Glitchtale Trial Mode</h1>
+      <p id="description" class="Text">Please fill out the required feilds.</p>
+
+      <!-- Survey Form -->
+      <div id="form">
+        <form id="survey-form">
+          <!--  Naming Area  -->
+          <div>
+            <label
+              for="name"
+              id="name-label"
+              class="Naming-Areas"
+              style="font-size: 20px"
+              >Name<br />
+              <input
+                id="name"
+                class="place-holders"
+                placeholder="John Smith"
+                required
+              />
+            </label>
+            <br />
+
+            <label
+              style="font-size: 20px"
+              for="email"
+              class="Naming-Areas"
+              id="email-label"
+              >Email <br />
+              <input
+                class="place-holders"
+                id="email"
+                type="email"
+                placeholder="someone@example.com"
+                required
+              /><br />
+            </label>
+            <label
+              for="Age"
+              class="Naming-Areas"
+              id="number-label"
+              style="font-size: 20px"
+              >Age (optional)<br />
+              <input
+                id="number"
+                class="place-holders"
+                min="5"
+                max="99"
+                type="number"
+                placeholder="12"
+              /><br />
+            </label>
+          </div>
+
+          <!-- Role -->
+          <div>
+            <p class="Naming-Areas">Which describes you the best</p>
+            <select class="place-holders" id="dropdown">
+              <option disabled selected value>Select your current role:</option>
+              <option>Student</option>
+              <option>Part-time worker</option>
+              <option>Full-time worker</option>
+              <option>Prefer not to say</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <!-- Recommendation -->
+          <div class="drop-down">
+            <p class="Text">Would you recommend Code Academy to others:</p>
+            <label
+              ><br />
+              <input name="id" value="Yea" type="radio" />Yea!</label
+            ><br />
+            <label><input value="Maybe" name="id" type="radio" />Maybe</label
+            ><br />
+            <label><input value="Nope" name="id" type="radio" />Nope</label
+            ><br />
+          </div>
+
+          <!-- Features -->
+          <div>
+            <p class="Text">The feature you like about Code Academy</p>
+            <select class="place-holders">
+              <option disabled selected value>Choose one</option>
+              <option>Lessons</option>
+              <option>Challenges</option>
+              <option>Community</option>
+              <option>Open Source</option>
+            </select>
+          </div>
+
+          <!-- Improvements -->
+          <div class="drop-down" style="color: white">
+            <p>What would you like to see improved? (Check all that apply)</p>
+            <label>
+              <input type="checkbox" value="Front-end-Projects" />Front-end
+              Projects</label
+            ><br />
+            <label
+              ><input type="checkbox" value="Back-end-Projects" />Back-end
+              Projects</label
+            ><br />
+            <label
+              ><input type="checkbox" value="Data-Visualization" />Data
+              Visualization</label
+            ><br />
+            <label><input type="checkbox" value="Challenges" />Challenges</label
+            ><br />
+            <label
+              ><input type="checkbox" value="Open-Source-Community" />Open
+              Source Community</label
+            ><br />
+            <label
+              ><input type="checkbox" value="Gitter-help-rooms" />Gitter help
+              rooms</label
+            ><br />
+            <label><input type="checkbox" value="Videos" />Videos</label><br />
+            <label
+              ><input type="checkbox" value="City-Meetups" />City Meetups</label
+            ><br />
+            <label><input type="checkbox" value="Wiki" />Wiki</label><br />
+            <label><input type="checkbox" value="Forum" />Forum</label><br />
+            <label
+              ><input type="checkbox" value="Additional-Courses" />Additional
+              Courses
+            </label>
+          </div>
+          <!-- Comments and Suggestion -->
+          <div>
+            <p class="Text">Comments and Suggestions</p>
+            <textarea
+              id="Comment-Section"
+              style="
+                padding: 10px 0px 91px 12px;
+                width: 100%;
+                border-radius: 12px;
+                border-color: antiquewhite;
+                font-family: monospace;
+                font-size: 14px;
+              "
+              placeholder="Please provide your review here!"
+            ></textarea>
+            <!--   <input id= "Comment-Section" class ="place-holders" " style="padding: 10px 0px 91px 12px;"> -->
+          </div>
+          <button id="submit" type="Sumbit">Sumbit Form</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
