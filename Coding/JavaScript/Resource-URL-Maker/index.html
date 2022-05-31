@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resource URL Generator</title>
+    <link rel="stylesheet" href="./css/custom-style.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src=""></script>
+  </head>
+  <body class="thm_bg white_color" style="margin-top: 50px">
+    <div class="column fl_verti_center fl_hori_center">
+      <h1>Resource URL Generator</h1>
+
+      <div class="form-interior white_bg txt_center">
+        <div class="form flex fl_verti_center fl_hori_center">
+          <div class="message left-side">
+            <input type="text" placeholder="Links" id="links" />
+          </div>
+        </div>
+
+        <div
+          id="code_output"
+          class="flex fl_hori_center"
+          style="margin-top: 20px"
+        >
+          <p id="output_html" style="overflow-wrap: break-word"></p>
+        </div>
+      </div>
+    </div>
+    
+    
+    <style>
+            footer {
+              position: fixed;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 60px;
+              background: #5c5c5c;
+              display: grid;
+              align-items: center;
+              justify-content: center;
+            }
+
+            footer > div > p > a {
+              color: #fff;
+            }
+
+          </style>
+          <footer>
+            <div>
+              <p>
+                A github repository created by
+                <a href="https://github.com/AcmeGamers">Acme Gamers</a>
+              </p>
+            </div>
+          </footer>
+          
+
+    <script>
+      // Inputs
+      var links = document.getElementById("links");
+
+      // Outputs
+      var output = document.getElementById("output_html");
+
+      links.oninput = function () {
+        output.innerHTML = encodeURIComponent(links.value);
+      };
+
+      // copy value from input
+      function copy() {
+        var range = document.createRange();
+        var selection = window.getSelection();
+        range.selectNodeContents(output);
+        selection.removeAllRanges();
+        selection.addRange(range);
+      }
+      document.addEventListener("keydown", function (e) {
+        if (e.keyCode == 67 && e.ctrlKey) {
+          copy();
+          console.log(" Copied to clipboard");
+        }
+      });
+    </script>
+          
+  </body>
+</html>

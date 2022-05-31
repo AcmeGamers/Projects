@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whatsapp Message Generator</title>
+    <link rel="stylesheet" href="./css/custom-style.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    
+  </head>
+  <body class="thm_bg white_color" style="margin-top: 50px">
+    <div class="column fl_verti_center fl_hori_center">
+      <h1>Whatsapp Message Generator</h1>
+
+      <div class="form-interior white_bg txt_center">
+        <div class="form flex fl_verti_center">
+          <div class="message left-side">
+            <input type="text" placeholder="Phone Number" id="number" />
+            <input type="text" placeholder="Message" id="message" />
+            <input type="text" placeholder="Links" id="links" />
+            <input type="text" placeholder="Image" image="image" />
+          </div>
+        </div>
+
+        <div
+          id="code_output"
+          class="flex fl_hori_center"
+          style="margin-top: 20px"
+        >
+          <p id="output_html" style="overflow-wrap: break-word">
+            https://api.whatsapp.com/send?phone=+<span id="out_phone"
+              >phone</span
+            >&text=<span id="out_message">message</span>&source_url=<span
+              id="out_link"
+              >link</span
+            >&icebreaker=<span id="out_message_2"></span>&entry_point=post_cta
+          </p>
+        </div>
+        <!-- <div
+          style="text-align: left; position: relative; left: 5.7vw; top: 10px"
+        >
+          <button
+            style="
+              background: #7d7d7d;
+              border: none;
+              padding: 10px 30px;
+              border-radius: 3px;
+              color: white;
+            "
+          >
+            Generate
+          </button>
+        </div> -->
+      </div>
+    </div>
+    <style>
+            footer {
+              position: fixed;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 60px;
+              background: #5c5c5c;
+              display: grid;
+              align-items: center;
+              justify-content: center;
+            }
+
+            footer > div > p > a {
+              color: #fff;
+            }
+
+          </style>
+          <footer>
+            <div>
+              <p>
+                A github repository created by
+                <a href="https://github.com/AcmeGamers">Acme Gamers</a>
+              </p>
+            </div>
+          </footer>
+          
+
+    <script>
+      // Inputs
+      var message = document.getElementById("message");
+      var phone = document.getElementById("number");
+      var links = document.getElementById("links");
+      var image = document.getElementById("image");
+      var output = document.getElementById("output_html");
+
+      // Outputs
+      var out_phone = document.getElementById("out_phone");
+      var out_message = document.getElementById("out_message");
+      var out_message_2 = document.getElementById("out_message_2");
+      var out_link = document.getElementById("out_link");
+      var out_image = document.getElementById("out_image");
+
+      phone.oninput = function () {
+        out_phone.innerHTML = encodeURIComponent(phone.value);
+      };
+      message.oninput = function () {
+        out_message.innerHTML = encodeURIComponent(message.value);
+        out_message_2.innerHTML = encodeURIComponent(message.value);
+      };
+      links.oninput = function () {
+        out_link.innerHTML = encodeURIComponent(links.value);
+      };
+
+      // copy value from input
+      function copy() {
+        var range = document.createRange();
+        var selection = window.getSelection();
+        range.selectNodeContents(output);
+        selection.removeAllRanges();
+        selection.addRange(range);
+      }
+      document.addEventListener("keydown", function (e) {
+        if (e.keyCode == 67 && e.ctrlKey) {
+          copy();
+          console.log(" Copied to clipboard");
+        }
+      });
+    </script>
+  </body>
+</html>
