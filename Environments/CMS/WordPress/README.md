@@ -15,12 +15,14 @@ Some samples
 
 ## Client Required Sites
 
-Websites based on the requirements of the clients (often designs were provided by them)
+Websites based on the requirements of the clients.
 
-- 
 - https://astoriatrader.com/
+- https://saim-welfare.com/
 - https://pahnava.shop/
 - https://mylegacy.pk/
 - https://mubixltd.com/
+- http://bluebirdgt.com/
+- https://www.sumaikaz.com/
 - https://jfsonsllc.com/
 - https://wonderlandgroupllc.com/
