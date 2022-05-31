@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline'"
+    />
+    <title>Settings</title>
+    <link rel="stylesheet" href="./mdl/material.min.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/materialize.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body style="background: #fafafa; user-select: none">
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0 0 2rem;
+      "
+    >
+      <h3>Settings</h3>
+      <button
+        id="close-btn"
+        style="background: none; border: none; cursor: pointer"
+        onclick="window.close()"
+      >
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <form id="form" class="slidecontainer">
+      <div style="display: flex; align-items: center; width: 90%">
+        <p style="width: 6rem; margin: 0">Set Limit</p>
+        <input
+          style="padding: 0 1rem; border: 0"
+          type="range"
+          min="1"
+          max="100"
+          value="90"
+          class="slider"
+          id="myRange"
+        />
+        <span id="rangeValue"></span>
+      </div>
+
+      <div style="margin: 2rem 0; text-align: right">
+        <button
+          class="
+            mdl-button mdl-js-button
+            mdl-button--accent
+            mdl-js-ripple-effect
+          "
+          onclick="window.close()"
+        >
+          Cancel
+        </button>
+
+        <button
+          type="submit"
+          class="
+            mdl-button mdl-js-button
+            mdl-button--raised mdl-button--colored
+            mdl-js-ripple-effect
+          "
+          onclick="window.close()"
+        >
+          Accept
+        </button>
+      </div>
+    </form>
+  </body>
+  <script src="./mdl/material.min.js"></script>
+  <script>
+    // const ipcRenderer = require("electron");
+
+    // Setting the Initial Save Number
+    document.getElementById("myRange").value = localStorage.getItem("value");
+
+    // Slider
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("rangeValue");
+
+    output.innerHTML = slider.value;
+
+    slider.oninput = function () {
+      output.innerHTML = this.value;
+    };
+
+    // Getting Form Value
+    const form = document.getElementById("form");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      sliderValue = slider.value;
+      console.log(slider.value);
+      localStorage.setItem("value", slider.value);
+      // ipcRenderer.send("form:value", { sliderValue });
+    });
+  </script>
+</html>

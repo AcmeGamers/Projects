@@ -1,0 +1,84 @@
+<!-- 
+    Will Carry a loading screen GIF
+    Then a start button
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline'"
+    />
+    <title>Home</title>
+    <link rel="stylesheet" href="./mdl/material.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+  </head>
+  <body style="padding: 0; user-select: none">
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        justify-content: center;
+      "
+    >
+      <img
+        style="
+          -webkit-user-drag: none;
+          -khtml-user-drag: none;
+          -moz-user-drag: none;
+          -o-user-drag: none;
+        "
+        src="../assets/battery-bar.png"
+        width="250"
+        alt=""
+      />
+      <!-- MDL Progress Bar with Buffering -->
+      <div
+        id="p3"
+        style="max-width: 60%; margin-top: 50px"
+        class="mdl-progress mdl-js-progress"
+      ></div>
+    </div>
+
+    <script>
+      document
+        .querySelector("#p3")
+        .addEventListener("mdl-componentupgraded", function () {
+          this.MaterialProgress.setProgress(0);
+          this.MaterialProgress.setBuffer(87);
+          move();
+        });
+
+      // Progress Bar
+      var i = 0;
+      function move() {
+        if (i == 0) {
+          i = 1;
+          var elem = document.getElementById("p3");
+          var width = 1;
+          var id = setInterval(frame, 20);
+          function frame() {
+            if (width >= 90) {
+              clearInterval(id);
+              i = 0;
+              window.close();
+            } else {
+              elem.MaterialProgress.setProgress(width);
+              width++;
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+  <script src="./mdl/material.min.js"></script>
+</html>
