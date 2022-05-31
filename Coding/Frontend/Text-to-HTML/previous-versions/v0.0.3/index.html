@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text to HTML</title>
+    <!-- Include stylesheet -->
+    <link
+      href="https://cdn.quilljs.com/1.3.6/quill.snow.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="main_content">
+      <!-- Left Content -->
+      <div id="left_content">
+        <div class="Top_Content">
+          <h1>Visual Editor to HTML</h1>
+          <div class="text_left">
+            <p>Press <strong> Ctrl + C </strong> to copy minified HTML.</p>
+          </div>
+        </div>
+
+        <div id="visual-editor">
+          <div id="editor">
+            <h1>Quill to HTML</h1>
+            Add content here.
+          </div>
+        </div>
+
+        <div id="code_output"><code id="output_html"></code></div>
+      </div>
+
+      <!-- Right Content  -->
+      <div id="right_content">
+        <div id="right_inner_content">
+          <h2>Configuration</h2>
+          <div id="optins">
+            <h3>Options</h3>
+            <p id="minified_html_checkbox">
+              <input type="radio" /> Minified HTML
+            </p>
+            <p id="formatted_html_checkbox">
+              <input type="radio" /> Formatted HTML
+            </p>
+          </div>
+          <div id="themes">
+            <h3>Themes</h3>
+            <input
+              type="radio"
+              class="radio_animation radio_navy_blue a06c a8583ff"
+              name="radio_colors"
+            />
+            <input
+              type="radio"
+              class="radio_animation radio_green a1cd05b af69130"
+              name="radio_colors"
+            />
+            <input
+              type="radio"
+              class="radio_animation radio_orange af69130 a1cd05b"
+              name="radio_colors"
+            />
+            <input
+              type="radio"
+              class="radio_animation radio_purple a754aff aff4444"
+              name="radio_colors"
+            />
+            <input
+              type="radio"
+              class="radio_animation radio_black a000 a8e8e8e"
+              name="radio_colors"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <!-- Include the Quill library -->
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+  <script>
+    // Initialize QUill editor
+    var toolbarOptions = [
+      // Headers and Font
+      [{ header: [1, 2, 3, 4, 5, 6, false] }],
+      [{ font: [] }],
+      //   [{ size: ["small", false, "large", "huge"] }],
+
+      // Togglable buttons
+      [{ align: [] }],
+      ["bold", "italic", "underline", "strike"],
+      ["blockquote", "code-block"],
+      //   [{ header: 1 }, { header: 2 }], // custom button values
+
+      [{ list: "ordered" }, { list: "bullet" }],
+      [{ script: "sub" }, { script: "super" }], // superscript/subscript
+      [{ indent: "-1" }, { indent: "+1" }], // outdent/indent
+      [{ direction: "rtl" }], // text direction
+
+      [{ color: [] }, { background: [] }], // dropdown with defaults from theme
+
+      ["clean"], // remove formatting button
+    ];
+
+    var quill = new Quill("#editor", {
+      modules: {
+        toolbar: toolbarOptions,
+      },
+      theme: "snow",
+    });
+
+    function updateHTML() {
+      document.getElementById("output_html").innerText = quill.root.innerHTML;
+    }
+
+    quill.on("text-change", () => {
+      updateHTML();
+    });
+
+    // HTML Formatter
+    // function format(html) {
+    //   var tab = "\t";
+    //   var result = "";
+    //   var indent = "";
+
+    //   html.split(/>\s*</).forEach(function (element) {
+    //     if (element.match(/^\/\w/)) {
+    //       indent = indent.substring(tab.length);
+    //     }
+
+    //     result += indent + "<" + element + ">\r\n";
+
+    //     if (element.match(/^<?\w[^>]*[^\/]$/) && !element.startsWith("input")) {
+    //       indent += tab;
+    //     }
+    //   });
+
+    //   return result.substring(1, result.length - 3);
+    // }
+    function selectText(node) {
+      node = document.getElementById(node);
+      // Seclting Data
+      if (document.body.createTextRange) {
+        const range = document.body.createTextRange();
+        range.moveToElementText(node);
+        range.select();
+      } else if (window.getSelection) {
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(node);
+        selection.removeAllRanges();
+        selection.addRange(range);
+      } else {
+        console.warn("Could not select text in node: Unsupported browser.");
+      }
+    }
+
+    // Performing Copy Action
+    document.addEventListener("copy", (event) => {
+      console.log("copy action initiated");
+      selectText("output_html");
+      event.clipboardData.setData("text/plain");
+    });
+
+    // Adding Input Check Support
+    document.addEventListener("keydown", function (event) {
+      var minified_html_checkbox = document.querySelector(
+        "#minified_html_checkbox > input"
+      );
+      var formatted_html_checkbox = document.querySelector(
+        "#formatted_html_checkbox > input"
+      );
+
+      // Event for Shift + f1
+      if (event.shiftKey && event.which == 112) {
+        console.log("Shift + f1, was pressed");
+
+        minified_html_checkbox.checked == false
+          ? (minified_html_checkbox.checked = true)
+          : (minified_html_checkbox.checked = false);
+      }
+
+      // Event for Shift + f2
+      else if (event.shiftKey && event.which == 113) {
+        console.log("Shift + f2, was pressed");
+        formatted_html_checkbox.checked == false
+          ? (formatted_html_checkbox.checked = true)
+          : (formatted_html_checkbox.checked = false);
+      }
+    });
+
+    // Adding Theme Change Option
+
+    var themes = document.querySelectorAll("#themes > input");
+    document
+      .getElementById("themes")
+      .addEventListener("change", function (event) {
+        for (const theme of themes) {
+          if (theme.checked == true) {
+            document.querySelector(
+              "body"
+            ).style.background = `#${theme.classList[2].substring(1)}`;
+
+            document.querySelector(
+              "#code_output"
+            ).style.borderLeft = `6px solid #${theme.classList[3].substring(
+              1
+            )}`;
+          }
+        }
+        //    #code_output === border-left: 6px solid #78ffa7;
+      });
+  </script>
+</html>
