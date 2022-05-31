@@ -1,0 +1,430 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+@speed: 10s;
+
+body {
+  background: #2f2f2f;
+}
+
+// use only the available space inside the 400x400 frame
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #fff;
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #2f2f2f;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.box {
+  background: black;
+}
+
+// Boxes
+#box1,
+#box2,
+#box3,
+#box4,
+#box5,
+#box6,
+#box7,
+#box8,
+#box9,
+#box10,
+#box11,
+#box12,
+#box13,
+#box14,
+#box15 {
+  background: black;
+  border: 1px solid white;
+}
+
+#box1 {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  z-index: 1;
+  animation-name: Box1;
+  animation-iteration-count: infinite;
+  animation-duration: $speed;
+}
+
+#box2 {
+  width: 280px;
+  height: 280px;
+  position: relative;
+  z-index: 2;
+  top: 9px;
+  left: 9px;
+  border: 1px solid white;
+  animation-name: Box2;
+  animation-iteration-count: infinite;
+  animation-duration: $speed;
+}
+
+#box3 {
+  width: 260px;
+  height: 260px;
+  position: relative;
+  z-index: 3;
+  top: 9px;
+  left: 9px;
+  border: 1px solid white;
+  animation-name: Box3;
+  animation-iteration-count: infinite;
+  animation-duration: $speed;
+}
+
+#box4 {
+  width: 240px;
+  height: 240px;
+  position: relative;
+  z-index: 4;
+  top: 9px;
+  left: 9px;
+  border: 1px solid white;
+  animation-name: Box4;
+  animation-iteration-count: infinite;
+  animation-duration: $speed;
+}
+
+#box5 {
+  width: 220px;
+  height: 220px;
+  position: relative;
+  z-index: 5;
+  top: 9px;
+  left: 9px;
+  border: 1px solid white;
+  animation-name: Box5;
+  animation-iteration-count: infinite;
+  animation-duration: $speed;
+}
+
+#box6 {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  z-index: 6;
+  top: 9px;
+  left: 9px;
+  border: 1px solid white;
+  animation-name: Box6;
+  animation-iteration-count: infinite;
+  animation-duration: $speed;
+}
+
+#box7 {
+  width: 180px;
+  height: 180px;
+  position: relative;
+  z-index: 7;
+  top: 9px;
+  left: 9px;
+  border: 1px solid white;
+  animation-name: Box7;
+  animation-iteration-count: infinite;
+  animation-duration: $speed;
+}
+
+#box8 {
+  width: 160px;
+  height: 160px;
+  position: relative;
+  z-index: 8;
+  top: 9px;
+  left: 9px;
+  border: 1px solid white;
+  animation-name: Box8;
+  animation-iteration-count: infinite;
+  animation-duration: $speed;
+}
+
+#box9 {
+  width: 140px;
+  height: 140px;
+  position: relative;
+  z-index: 9;
+  top: 9px;
+  left: 9px;
+  border: 1px solid white;
+  animation-name: Box9;
+  animation-iteration-count: infinite;
+  animation-duration: $speed;
+}
+
+#box10 {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  z-index: 10;
+  top: 9px;
+  left: 9px;
+  border: 1px solid white;
+  animation-name: Box10;
+  animation-iteration-count: infinite;
+  animation-duration: $speed;
+}
+
+#box11 {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  z-index: 11;
+  top: 9px;
+  left: 9px;
+  border: 1px solid white;
+  animation-name: Box11;
+  animation-iteration-count: infinite;
+  animation-duration: $speed;
+}
+#box12 {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  z-index: 12;
+  top: 9px;
+  left: 9px;
+  border: 1px solid white;
+  animation-name: Box12;
+  animation-iteration-count: infinite;
+  animation-duration: $speed;
+}
+
+#box13 {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  z-index: 13;
+  top: 9px;
+  left: 9px;
+  border: 1px solid white;
+  animation-name: Box13;
+  animation-iteration-count: infinite;
+  animation-duration: $speed;
+}
+
+#box14 {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  z-index: 14;
+  top: 9px;
+  left: 9px;
+  border: 1px solid white;
+  animation-name: Box14;
+  animation-iteration-count: infinite;
+  animation-duration: $speed;
+}
+
+#box15 {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  z-index: 15;
+  top: 9px;
+  left: 9px;
+  border: 1px solid white;
+  animation-name: Box15;
+  animation-iteration-count: infinite;
+  animation-duration: $speed;
+}
+
+// Keyframes
+@keyframes Box1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes Box2 {
+  0% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes Box3 {
+  0% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes Box4 {
+  0% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(15deg);
+  }
+}
+
+@keyframes Box5 {
+  0% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(20deg);
+  }
+}
+
+@keyframes Box6 {
+  0% {
+    transform: rotate(25deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(25deg);
+  }
+}
+
+@keyframes Box7 {
+  0% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(30deg);
+  }
+}
+
+@keyframes Box8 {
+  0% {
+    transform: rotate(35deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(35deg);
+  }
+}
+
+@keyframes Box9 {
+  0% {
+    transform: rotate(40deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(40deg);
+  }
+}
+
+@keyframes Box10 {
+  0% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes Box11 {
+  0% {
+    transform: rotate(50deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(50deg);
+  }
+}
+
+@keyframes Box12 {
+  0% {
+    transform: rotate(55deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(55deg);
+  }
+}
+
+@keyframes Box13 {
+  0% {
+    transform: rotate(60deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(60deg);
+  }
+}
+
+@keyframes Box14 {
+  0% {
+    transform: rotate(65deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(65deg);
+  }
+}
+
+@keyframes Box15 {
+  0% {
+    transform: rotate(70deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(70deg);
+  }
+}
