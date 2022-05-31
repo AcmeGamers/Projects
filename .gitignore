@@ -1,1 +1,24 @@
 node_modules
+
+# Dart: https://www.dartlang.org/guides/libraries/private-files
+.dart_tool
+.packages
+build
+pubspec.lock
+doc/api
+*.dart.js
+*.info.json      # Produced by the --dump-info flag.
+*.js_
+*.js.deps
+*.js.map
+
+# environment
+.DS_Store
+.env
+.env.local
+.env.test
+.env.dart_tool
+.env.dart_tool.dart2js.dart2js.deps
+.env.dart_tool.dart2js.dart2js.js
+.env.dart_tool.dart2js.dart2js.js.map 
+.env.dart_tool.dart2js.dart2js.js.deps
