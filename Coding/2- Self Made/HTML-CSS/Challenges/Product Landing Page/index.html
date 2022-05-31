@@ -5,124 +5,186 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product Landing Page</title>
-    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header id="header">
-      <img
-        src="ttps://i.ibb.co/r27tyNL/kisspng-logo-dragon-graphic-design-dragon-logo-5ade0b787516d5-1274049715245013684796.png"
-        alt="echo tech company"
-        id="header-img"
-        max-width="auto"
-        height="100px"
-      />
+    <!--  Navigation   -->
+    <header class="navigation" id="header">
       <nav id="nav-bar">
-        <ul class="nav-links">
-          <li class="nav-link"><a href="#">Home</a></li>
-          <li class="nav-link"><a href="#">Features</a></li>
-          <li class="nav-link"><a href="#">Pricing</a></li>
+        <div class="logo">
+          <img
+            id="header-img"
+            style="float: left; margin-top: -0.3rem"
+            src="https://static.vecteezy.com/system/resources/previews/001/191/986/non_2x/circle-logo-png.png"
+          />
+          <p style="float: right; padding-left: 2vw">Foren DevOps</p>
+        </div>
+        <ul class="navBar">
+          <ol>
+            <a class="nav-link" href="#process">Our Process</a>
+          </ol>
+          <ol>
+            <a class="nav-link" href="#pricing">Pricing</a>
+          </ol>
+          <ol>
+            <a class="nav-link" href="#newsletter">Newsletter</a>
+          </ol>
         </ul>
       </nav>
     </header>
+    <!--/  Navigation   -->
+    <!--   Image  -->
+    <div class="background">
+      <h1 style="margin: 0; align-self: center">Imma Title</h1>
+    </div>
+    <!--/   Image    -->
+    <!--   Process   -->
+    <div class="container" style="display: block">
+      <h2 id="process" style="">OUR PROCESS</h2>
+      <div class="items">
+        <ul class="method">
+          <li>
+            <img
+              id="img-2"
+              class="image"
+              src="https://icons-for-free.com/iconfiles/png/512/desktop+display+laptop+monitor+notebook+pc+screen+icon-1320190729239100161.png"
+            />
+          </li>
+          <li>
+            <p style="margin: 3.7vh 0 3.7vh 13vw">
+              Add a product to cart and make an order online.
+            </p>
+          </li>
+        </ul>
 
-    <div class="products">
-      <div class="flex-product">
-        <!-- Product 1 -->
-        <div class="product-header">Heading</div>
-        <div class="product-text">
-          <p>This is a procduct</p>
-          <p>Lorem Ipsum reser</p>
-          <p>Lorem Ipsum reser</p>
-          <p>Lorem Ipsum reser</p>
-        </div>
-        <div class="price">20$</div>
-        <button class="product-button">Sumbit</button>
-      </div>
-      <!-- Product 2 -->
-      <div class="flex-product">
-        <div class="product-header">Heading</div>
-        <div class="product-text">
-          <p>This is a procduct</p>
-          <p>Lorem Ipsum reser</p>
-          <p>Lorem Ipsum reser</p>
-          <p>Lorem Ipsum reser</p>
-        </div>
-        <div class="price">30$</div>
-        <button class="product-button">Sumbit</button>
-      </div>
-      <!-- Product 3 -->
-      <div class="flex-product">
-        <div class="product-header">Heading</div>
-        <div class="product-text">
-          <p>This is a procduct</p>
-          <p>Lorem Ipsum reser</p>
-          <p>Lorem Ipsum reser</p>
-          <p>Lorem Ipsum reser</p>
-        </div>
-        <div class="price">50$</div>
-        <button class="product-button">Sumbit</button>
+        <ul class="method">
+          <li>
+            <img
+              class="image"
+              id="img-3"
+              src="https://icons-for-free.com/iconfiles/png/512/currency+dollar+money+icon-1320195548001449382.png"
+            />
+          </li>
+          <li>
+            <p style="margin: 5.5vh 0 5.5vh 13vw">
+              Select your payment method.
+            </p>
+          </li>
+        </ul>
+
+        <ul class="method">
+          <li>
+            <img
+              id="img-1"
+              class="image"
+              src="https://icon-library.com/images/food-delivery-icon/food-delivery-icon-20.jpg"
+            />
+          </li>
+          <li>
+            <p style="margin: 5vh 0 5vh 13vw">
+              Your package will arrive in 2-3 business days.
+            </p>
+          </li>
+        </ul>
       </div>
     </div>
+    <!--/   Process   -->
+    <!--   Pricing Tables   -->
+    <div id="pricing" class="container">
+      <div class="pricing">
+        <h2 id="price" style="position: relative; top: -2rem">PRICING</h2>
+      </div>
+      <div class="card">
+        <h3 class="plan">Standard</h3>
+        <p class="price">$20</p>
 
-    <!-- Message -->
-    <div class="Elements">
-      <h3>A message from Chief</h3>
-      <br />
+        <div class="features">
+          <p>Lorem ipsum dolor sit amet</p>
+          <p>Lorem ipsum dolor sit amet</p>
+          <p>Lorem ipsum dolor sit amet</p>
+          <p>Lorem ipsum dolor sit amet</p>
+        </div>
+        <button class="button" href="#">Buy Me</button>
+      </div>
+
+      <div class="card">
+        <h3 class="plan">Gold</h3>
+        <p class="price">$35</p>
+
+        <div class="features">
+          <p>Lorem ipsum dolor sit amet</p>
+          <p>Lorem ipsum dolor sit amet</p>
+          <p>Lorem ipsum dolor sit amet</p>
+          <p>Lorem ipsum dolor sit amet</p>
+        </div>
+        <button class="button" href="#">Buy Me</button>
+      </div>
+
+      <div class="card">
+        <h3 class="plan">Platinium</h3>
+        <p class="price">$50</p>
+
+        <div class="features">
+          <p>Lorem ipsum dolor sit amet</p>
+          <p>Lorem ipsum dolor sit amet</p>
+          <p>Lorem ipsum dolor sit amet</p>
+          <p>Lorem ipsum dolor sit amet</p>
+        </div>
+        <button class="button" href="#">Buy Me</button>
+      </div>
+    </div>
+    <!--/   Pricing Tables   -->
+    <!--  Video   -->
+    <div class="container">
       <video
-        width="500"
-        height="350"
-        style="display: block; margin: 0 auto"
+        id="video"
+        width="320"
+        height="240"
+        style="width: 100rem; height: auto"
         controls
       >
         <source src="movie.mp4" type="video/mp4" />
-        <source src="movie.ogg" type="video/ogg" />
-        Your browser does not support the video tag.
       </video>
     </div>
-
-    <!--  Elements  -->
-    <div class="Elements">
-      <div class="Element-TI">
-        <img
-          class="icon-element"
-          src="https://i.imgur.com/920V9ma.png"
-          alt="image"
-          class="Elememt-Icon"
-        />
-        <p class="Elements-text">
-          Lorem ipsum dolor sit amet, mel ex iusto dicam adolescens, dico
-          consulatu inciderint quo ei. Vero vivendum eu vim.
-        </p>
-      </div>
-      <!--  2nd Element  -->
-      <div class="Element-TI">
-        <img
-          class="icon-element"
-          src="https://i.imgur.com/AhGt0zz.png"
-          alt="image"
-          class="Elememt-Icon"
-          style="width: 110px; -webkit-transform: scaleX(-1)"
-        />
-        <p class="Elements-text">
-          Lorem ipsum dolor sit amet, mel ex iusto dicam adolescens, dico
-          consulatu inciderint quo ei. Vero vivendum eu vim.
-        </p>
-      </div>
-
-      <!--  3rd Element  -->
-      <div class="Element-TI">
-        <img
-          class="icon-element"
-          src="https://i.imgur.com/Ugyl4ec.png"
-          alt="image"
-          class="Elememt-Icon"
-          style="-webkit-transform: scaleX(-1)"
-        />
-        <p class="Elements-text">
-          Lorem ipsum dolor sit amet, mel ex iusto dicam adolescens, dico
-          consulatu inciderint quo ei. Vero vivendum eu vim.
-        </p>
-      </div>
+    <!--/  Video   -->
+    <!--   Email   -->
+    <div class="container" style="background: #464646">
+      <form
+        id="form"
+        action="https://www.freecodecamp.com/email-submit"
+        target="_blank"
+      >
+        <div class="mail">
+          <h2 id="newsletter" style="">NEWSLETTER</h2>
+          <p class="mail-text">
+            Sign up and get weekly updates related to your interest!
+          </p>
+          <br />
+          <label for="input_value"></label>
+          <input
+            id="email"
+            placeholder="I need emails!"
+            type="email"
+            name="email"
+            size="40"
+            class="input"
+          />
+          <input type="submit" value="Submit" id="submit" class="mail-button" />
+        </div>
+      </form>
     </div>
+    <!--/   Email   -->
+    <!--   Footer   -->
+    <div class="footer">
+      <p>Made with ❤ by <b>Acme</b></p>
+    </div>
+    <!--/   Footer   -->
   </body>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </html>

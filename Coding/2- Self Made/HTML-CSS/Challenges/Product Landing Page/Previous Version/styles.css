@@ -1,0 +1,149 @@
+body {
+  background: url(https://images.pexels.com/photos/3617500/pexels-photo-3617500.jpeg);
+  background-attachment: fixed;
+  background-position: center bottom;
+  /*   overflow: hidden; */
+}
+/*************
+  * Navigation
+  *************/
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  grid-auto-flow: column;
+  position: absolute;
+  float: right;
+  right: 12vh;
+  top: 0;
+}
+
+.nav-link {
+  font-size: 24px;
+  padding-right: 4vw;
+}
+
+a {
+  transition: 0.5s ease all;
+}
+
+.nav-link a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-link a:hover {
+  color: white;
+}
+
+.Video {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+#form {
+}
+
+/*************
+  * Text 
+  *************/
+.Elements {
+  background: white;
+  height: 100%;
+  padding: 5vw 7vw;
+}
+
+.Element-TI {
+  column-count: 2;
+  align-items: center;
+  display: flex;
+  place-content: center;
+}
+.Elememt-Icon {
+  padding: 0px 24px;
+}
+
+.icon-element {
+  height: auto;
+  width: 90px;
+  margin-right: 68px;
+}
+
+/*************
+  * Flex boxes 
+  *************/
+.products {
+  display: flex;
+  place-content: center;
+  margin-bottom: 16vh;
+}
+
+.flex-product {
+  background: #ccc7c7;
+  display: inline-grid;
+  padding: 65px;
+  transition: 1s ease all;
+  margin-left: 17px;
+  font-size: 22px;
+  margin-top: 16vh;
+  border: 3px solid black;
+}
+
+.product-header {
+  font-size: 2.5vw;
+}
+.product-text {
+  font-size: 1vw;
+}
+
+/* .flex-product:hover {
+  background: #656161;
+  color: white;
+  }
+  */
+.product-header {
+  text-align: center;
+  border-bottom: 2px solid #8e7b7b;
+  padding-bottom: 5px;
+}
+
+.product-text {
+  text-align: center;
+  color: #5a5858;
+  font-size: 22px;
+}
+
+.price {
+  text-align: center;
+  color: #383737;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.product-button {
+  margin-top: 30px;
+  background: transparent;
+  padding: 7px;
+  outline-style: none;
+  font-size: 15px;
+  transition: 0.51s ease all;
+}
+
+.product-button:hover {
+  color: white;
+  background: #716565;
+}
+
+/* Media Quieres */
+@media screen and (max-width: 1000px) {
+  .flex-product {
+    background: #ccc7c7;
+    display: inline-grid;
+    padding: 32px;
+    transition: 1s ease all;
+    margin-left: 17px;
+    font-size: 22px;
+    margin-top: 16vh;
+    border: 3px solid black;
+  }
+}

@@ -1,149 +1,162 @@
 body {
-  background: url(https://images.pexels.com/photos/3617500/pexels-photo-3617500.jpeg);
-  background-attachment: fixed;
-  background-position: center bottom;
-  /*   overflow: hidden; */
+  margin: 0;
+  overflow-x: hidden;
 }
-/*************
-  * Navigation
-  *************/
-.nav-links {
-  list-style-type: none;
-  display: flex;
-  grid-auto-flow: column;
+
+/* Navigation */
+.navigation {
+  padding: 1rem;
+  box-shadow: -1px -4px 10px 0px black;
+}
+.logo {
+  margin: 0;
+  text-align: center;
   position: absolute;
-  float: right;
-  right: 12vh;
-  top: 0;
+  left: 15vw;
+}
+.logo img {
+  width: 60px;
 }
 
-.nav-link {
-  font-size: 24px;
-  padding-right: 4vw;
+.navBar {
+  transition: 0.5s ease all;
+  margin: 0;
+  margin-left: 50vw;
+  padding-right: 10px;
+}
+.navBar ol {
+  transition: 0.5s ease all;
+  display: inline-flex;
+  padding-right: 28px;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+.navBar ol a {
+  transition: 0.5s ease all;
+  font-family: system-ui;
+  text-decoration: none;
+  color: #505050;
+  font-weight: 600;
 }
 
-a {
+/* Some Animation */
+.navBar:hover a {
+  transition: 0.5s ease all;
+  color: #a9a8a8 !important;
+}
+.nav-link:hover a {
+  color: #505050 !important;
   transition: 0.5s ease all;
 }
 
-.nav-link a {
-  text-decoration: none;
-  color: black;
-}
-
-.nav-link a:hover {
+/* Background */
+.background {
+  justify-content: center;
+  background: linear-gradient(rgba(0, 0, 1, 0.75), rgba(0, 0, 1, 0.75)),
+    url(https://wallpaperaccess.com/full/2704587.jpg);
+  display: flex;
+  align-items: flex-start;
   color: white;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  background-attachment: fixed;
 }
 
-.Video {
+/* Containers */
+.container {
+  padding: 15vh 10vw 15vh;
   display: flex;
   flex-wrap: wrap;
-  align-content: center;
+  justify-content: center;
 }
 
-#form {
+/* Process */
+h2 {
+  text-align: center;
+  letter-spacing: 7px;
+  font-weight: 900;
+  font-family: -webkit-pictograph;
+}
+.container ul {
+  list-style-type: none;
+}
+.method {
+  padding: 2rem 0;
+}
+.image {
+  float: left;
+}
+#img-1 {
+  width: 5rem;
+}
+#img-2 {
+  width: 4rem;
+  margin-left: 1vw;
+}
+#img-3 {
+  width: 5rem;
 }
 
-/*************
-  * Text 
-  *************/
-.Elements {
+/* Cards */
+.card {
+  background: #d6d6d6;
+  max-width: 33.3%;
+  display: inline-block;
+  margin: 3vh 2.5rem 3vh 2.5rem;
+  text-align: center;
+  padding: 3.1rem;
+}
+.plan {
+  margin: 0;
+}
+button {
+  padding: 7px 30px;
+}
+
+/* Pricing */
+#pricing {
+  background: #2f2a2a;
+}
+.pricing {
+  width: 100%;
+  color: white !important;
+}
+
+/* Newsletter */
+#newsletter {
+  color: white;
+}
+.mail-text {
+  text-align: center;
+  color: #e0e0e0;
+}
+input {
+  padding: 7px 10px;
+}
+
+/* Footer */
+
+.footer {
+  background: #252525;
+  color: #cacaca;
+  padding: 12px;
+}
+.footer p {
+  margin: 0;
+  text-align: center;
+}
+
+@media (max-width: 595px) {
+  .mail {
+    display: flex;
+    flex-flow: column;
+  }
+}
+#header {
+  position: fixed;
   background: white;
-  height: 100%;
-  padding: 5vw 7vw;
-}
-
-.Element-TI {
-  column-count: 2;
-  align-items: center;
-  display: flex;
-  place-content: center;
-}
-.Elememt-Icon {
-  padding: 0px 24px;
-}
-
-.icon-element {
-  height: auto;
-  width: 90px;
-  margin-right: 68px;
-}
-
-/*************
-  * Flex boxes 
-  *************/
-.products {
-  display: flex;
-  place-content: center;
-  margin-bottom: 16vh;
-}
-
-.flex-product {
-  background: #ccc7c7;
-  display: inline-grid;
-  padding: 65px;
-  transition: 1s ease all;
-  margin-left: 17px;
-  font-size: 22px;
-  margin-top: 16vh;
-  border: 3px solid black;
-}
-
-.product-header {
-  font-size: 2.5vw;
-}
-.product-text {
-  font-size: 1vw;
-}
-
-/* .flex-product:hover {
-  background: #656161;
-  color: white;
-  }
-  */
-.product-header {
-  text-align: center;
-  border-bottom: 2px solid #8e7b7b;
-  padding-bottom: 5px;
-}
-
-.product-text {
-  text-align: center;
-  color: #5a5858;
-  font-size: 22px;
-}
-
-.price {
-  text-align: center;
-  color: #383737;
-  font-weight: 700;
-  font-size: 22px;
-}
-
-.product-button {
-  margin-top: 30px;
-  background: transparent;
-  padding: 7px;
-  outline-style: none;
-  font-size: 15px;
-  transition: 0.51s ease all;
-}
-
-.product-button:hover {
-  color: white;
-  background: #716565;
-}
-
-/* Media Quieres */
-@media screen and (max-width: 1000px) {
-  .flex-product {
-    background: #ccc7c7;
-    display: inline-grid;
-    padding: 32px;
-    transition: 1s ease all;
-    margin-left: 17px;
-    font-size: 22px;
-    margin-top: 16vh;
-    border: 3px solid black;
-  }
+  z-index: 2;
+  width: 100%;
+  overflow: none;
 }
