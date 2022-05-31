@@ -1,10 +1,10 @@
 # Projects
 
-These are some of the projects made with WordPress:
+These are some of the projects only made with WordPress, coded websites are present in their respective directories. The wordpress projects are listed below:
 
 ## Samples
 
-Some samples
+Some samples made with WordPress for AM Designers.
 
 - https://sample-1.am-designers.pw
 - https://sample-2.am-designers.pw
