@@ -1,0 +1,87 @@
+:root {
+  --bg: #f5f6fa;
+  --white: #ffffff;
+
+  --primary: #5457b6;
+  --secondary: #ed6468;
+  --primary-light: #c3c4ef;
+  --secondary-light: #ffb8bb;
+
+  --p-font: 16px;
+  --font-family: "Rubik", sans-serif;
+  /* Weights: 400, 500, 700 */
+}
+
+body {
+  background-color: var(--bg);
+  font-family: var(--font-family);
+  font-size: 16px;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+/* Predefined CSS */
+.flex {
+  display: flex;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.hr-center {
+  align-items: center;
+}
+.hr-right {
+  align-items: flex-end;
+}
+.vr-top {
+  align-items: flex-start;
+}
+.vr-center {
+  justify-content: center;
+}
+.full-width {
+  width: -webkit-fill-available;
+}
+.space-between {
+  justify-content: space-between;
+}
+.space-around {
+  justify-content: space-around;
+}
+.space-evenly {
+  justify-content: space-evenly;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+.mg-lr-10px {
+  margin: 0 10px;
+}
+.mg-lr-15px {
+  margin: 0 15px;
+}
+.mg-r-10px {
+  margin-right: 10px;
+}
+
+.mg-r-15px {
+  margin-right: 15px;
+}
+.mg-l-15px-r-10px {
+  margin-left: 15px;
+  margin-right: 10px;
+}
+.hidden {
+  display: none;
+}

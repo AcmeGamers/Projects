@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Sunnyside agency landing page</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,800;9..144,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,800;9..144,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="row space-between vr-center hr-center absolute full-width">
+        <div class="logo">
+          <img src="./images/logo.svg" alt="logo" />
+        </div>
+        <a
+          href="javascript:void(0);"
+          class="icon mobile-view"
+          onclick="navigationActivision()"
+        >
+          <img src="images/icon-hamburger.svg" alt="" />
+        </a>
+        <nav id="header-navigation">
+          <ul class="row no-decoration hr-center no-bullets links">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Projects</a></li>
+            <li>
+              <a href="#">
+                <button class="uppercase">Contact</button>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <!-- secion-1 -->
+      <div
+        id="section-1"
+        class="screen-height column space-evenly center-text hr-center"
+      >
+        <h1 class="uppercase" id="title">We are creatives</h1>
+        <img src="images/icon-arrow-down.svg" width="30" alt="" />
+      </div>
+      <!-- secion-2 -->
+      <div id="section-2" class="row">
+        <div class="container column vr-center">
+          <h2>Transform your brand</h2>
+          <p>
+            We are a full-service creative agency specializing in helping brands
+            grow fast. Engage your clients through compelling visuals that do
+            most of the marketing for you.
+          </p>
+          <a class="link link-yellow" href="#">Learn more</a>
+        </div>
+
+        <img src="images/desktop/image-transform.jpg" alt="" />
+      </div>
+      <!-- secion-3 -->
+      <div class="row" id="section-3">
+        <img src="images/desktop/image-stand-out.jpg" alt="" />
+
+        <div class="column vr-center">
+          <h2>Stand out to the right audience</h2>
+          <p>
+            Using a collaborative formula of designers, researchers,
+            photographers, videographers, and copywriters, we’ll build and
+            extend your brand in digital places.
+          </p>
+          <a class="link link-red" href="#">Learn more</a>
+        </div>
+      </div>
+      <!-- secion-4 -->
+      <div id="section-4" class="row">
+        <div class="column vr-bottom hr-center center-text">
+          <h3>Graphic Design</h3>
+          <p>
+            Great design makes you memorable. We deliver artwork that
+            underscores your brand message and captures potential clients’
+            attention.
+          </p>
+        </div>
+        <div class="column vr-bottom hr-center center-text">
+          <h3>Photography</h3>
+          <p>
+            Increase your credibility by getting the most stunning, high-quality
+            photos that improve your business image.
+          </p>
+        </div>
+      </div>
+      <!-- client testimonial -->
+      <div class="center-text testimonial">
+        <h2 class="uppercase">Client testimonials</h2>
+        <div class="row">
+          <!-- testimonial 1 -->
+          <div class="column space-between hr-center">
+            <img class="user" src="images/image-emily.jpg" alt="" />
+            <p>
+              We put our trust in Sunnyside and they delivered, making sure our
+              needs were met and deadlines were always hit.
+            </p>
+
+            <div>
+              <p class="user--name">Emily R.</p>
+              <p class="user--title">Marketing Director</p>
+            </div>
+          </div>
+          <!-- testimonial 2 -->
+          <div class="column space-between hr-center">
+            <img class="user" src="images/image-thomas.jpg" alt="" />
+            <p>
+              Sunnyside’s enthusiasm coupled with their keen interest in our
+              brand’s success made it a satisfying and enjoyable experience.
+            </p>
+
+            <div>
+              <p class="user--name">Thomas S.</p>
+              <p class="user--title">Chief Operating Officer</p>
+            </div>
+          </div>
+          <!-- testimonial 3 -->
+          <div class="column space-between hr-center">
+            <img class="user" src="images/image-jennie.jpg" alt="" />
+
+            <p>
+              Incredible end result! Our sales increased over 400% when we
+              worked with Sunnyside. Highly recommended!
+            </p>
+
+            <div>
+              <p class="user--name">Jennie F.</p>
+              <p class="user--title">Business Owner</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- images -->
+      <div class="row gallery">
+        <img src="images/desktop/image-gallery-cone.jpg" alt="" />
+        <img src="images/desktop/image-gallery-milkbottles.jpg" alt="" />
+        <img src="images/desktop/image-gallery-orange.jpg" alt="" />
+        <img src="images/desktop/image-gallery-sugarcubes.jpg" alt="" />
+      </div>
+
+      <!-- footer -->
+      <footer class="column hr-center">
+        <h2>sunnyside</h2>
+        <nav>
+          <ul class="row no-decoration no-bullets">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Projects</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <img src="images/icon-facebook.svg" alt="" />
+          <img src="images/icon-instagram.svg" alt="" />
+          <img src="images/icon-twitter.svg" alt="" />
+          <img src="images/icon-pinterest.svg" alt="" />
+        </div>
+      </footer>
+    </main>
+    <script>
+      let header = document.getElementById("header-navigation").style;
+      function navigationActivision() {
+        header.display === "block"
+          ? (header.display = "none")
+          : (header.display = "block");
+      }
+      window.addEventListener("resize", () => {
+        window.innerWidth > 768
+          ? (header.display = "block")
+          : (header.display = "none");
+      });
+
+      // window.addEventListener("click", (event) => {
+      //   let path = event.path;
+      //   window.innerWidth > 768 &&
+      //     path &&
+      //     path.includes("nav#header-navigation") === false &&
+      //     (header.display = "none");
+      //   console.log(path.includes("nav#header-navigation"));
+      //   console.log(path);
+      // });
+    </script>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script>
+      var app = document.getElementById("title");
+
+      var typewriter = new Typewriter(app, {
+        loop: true,
+        delay: 50,
+      });
+
+      typewriter
+        .typeString("We Are Creative")
+        .pauseFor(2500)
+        .deleteChars(8)
+        .typeString("Innovative")
+        .pauseFor(2500)
+        .deleteChars(10)
+        .typeString("Prouductive")
+        .pauseFor(2500)
+        .start();
+    </script>
+  </body>
+</html>

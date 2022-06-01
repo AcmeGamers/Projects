@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css?family=Alata:400");
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:300");
+
+:root {
+  --white: #fff;
+  --primary: hsl(0, 0%, 55%);
+  --secondary: hsl(0, 0%, 41%);
+
+  --text-color: #ebdbfa;
+
+  --font-1: "Alata", system-ui;
+  --font-1: "Josefin Sans", system-ui;
+  --font-weight-1: 300;
+  --font-weight-2: 400;
+  --font-size: 15px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--primary);
+  color: var(--text-color);
+  font-family: var(--font-1);
+  font-size: 15px;
+}
+
+nav ul {
+  margin: 0;
+}
+nav li {
+  margin: 0 20px;
+}
+/* Text Appearance */
+h1 {
+  position: relative;
+  top: 100px;
+  font-weight: 100;
+  font-size: 50px;
+  width: fit-content;
+  text-transform: uppercase;
+  border: 1px solid;
+  padding: 30px 65px 30px 30px;
+}
+p {
+  line-height: 1.6;
+}
+
+/* Components */
+
+/* Classes */
+.header > img {
+  width: 150px;
+  height: fit-content;
+}
+
+.section-1 {
+  padding: 50px 100px;
+  background: url("images/desktop/image-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 70vh;
+}
+
+.section-2 {
+  padding: 100px;
+  color: #505050;
+}
+.section-2 img {
+  height: 30vw;
+}
+.section-2 div {
+  background: white;
+  position: relative;
+  transform: translate(-100px, 100px);
+  padding: 35px 70px;
+  width: 34%;
+}
+.section-2 div h2 {
+  font-size: 42px;
+  text-transform: uppercase;
+  color: black;
+}
+.section-2,
+.section-3 {
+  background: white;
+}
+
+/* Predefined CSS */
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.hr-center {
+  align-items: center;
+}
+.vr-center {
+  justify-content: center;
+}
+.vr-end {
+  align-items: flex-end;
+}
+.full-width {
+  width: -webkit-fill-available;
+}
+.space-between {
+  justify-content: space-between;
+}
+.space-evenly {
+  justify-content: space-evenly;
+}
+.screen-height {
+  height: 100vh;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.hidden {
+  display: none;
+}
+.red {
+  color: red;
+}
+.no-list {
+  list-style: none;
+}
+
+/* media query */
+@media (max-width: 992px) {
+}

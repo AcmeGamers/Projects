@@ -1,0 +1,186 @@
+/* Bright orange: hsl(31, 77%, 52%)
+  Dark cyan: hsl(184, 100%, 22%)
+  Very dark cyan: hsl(179, 100%, 13%)
+  
+  ### Neutral
+  
+  Transparent white (paragraphs): hsla(0, 0%, 100%, 0.75)
+  Very light gray (background, headings, buttons): hsl(0, 0%, 95%) */
+
+:root {
+  --bg: #f2f2f2;
+  --white: #ffffff;
+
+  --primary: #fff;
+
+  --text-color: #f2f2f2;
+
+  --font-1: "Big Shoulders Display", system-ui;
+  --font-2: "Lexend Deca", system-ui;
+  --font-weight-1: 200;
+  --font-weight-2: 400;
+  --font-weight-3: 700;
+
+  --font-size: 15px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-color);
+  font-family: var(--font-1);
+  font-size: 15px;
+}
+
+/* Text Appearance */
+h1 {
+  color: var(--primary);
+  letter-spacing: 1.3px;
+  font-size: 36px;
+  line-height: 1;
+  margin-bottom: 30px;
+  font-weight: var(--font-weight-3);
+}
+p {
+  font-family: var(--font-2);
+  line-height: 2;
+  margin-bottom: 60px;
+  font-weight: var(--font-weight-1);
+  font-size: 14px;
+}
+
+/* Components */
+main {
+  width: 70%;
+}
+img {
+  width: 60px;
+}
+button {
+  border: 1px solid transparent;
+  padding: 15px 35px;
+  border-radius: 60px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.5s ease all;
+  color: #000;
+  font-family: var(--font-2);
+  font-weight: var(--font-weight-2);
+}
+
+/* Classes */
+.card {
+  padding: 30px 60px 30px 60px;
+}
+.card:nth-child(1) {
+  background: #e28525;
+  border-radius: 5px 0 0 5px;
+}
+.card:nth-child(1) button {
+  color: #e28525;
+}
+.card:nth-child(1) button:hover {
+  background: #e28525;
+  border: 1px solid #fff;
+  color: #fff;
+}
+.card:nth-child(2) {
+  background: #016972;
+  border-radius: 0;
+}
+.card:nth-child(2) button {
+  color: #016972;
+}
+.card:nth-child(2) button:hover {
+  background: #016972;
+  border: 1px solid #fff;
+  color: #fff;
+}
+.card:nth-child(3) {
+  background: #00403f;
+  border-radius: 0 5px 5px 0;
+}
+.card:nth-child(3) button {
+  color: #00403f;
+}
+.card:nth-child(3) button:hover {
+  background: #00403f;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+/* Predefined CSS */
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.hr-center {
+  align-items: center;
+}
+.vr-center {
+  justify-content: center;
+}
+.vr-left {
+  align-items: flex-start;
+}
+.full-width {
+  width: -webkit-fill-available;
+}
+.space-between {
+  justify-content: space-between;
+}
+.space-evenly {
+  justify-content: space-evenly;
+}
+.screen-height {
+  height: 100vh;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.hidden {
+  display: none;
+}
+.red {
+  color: red;
+}
+.no-list {
+  list-style: none;
+}
+
+/* media query */
+
+@media screen and (max-width: 1000px) {
+  body {
+    height: auto !important;
+    margin: 100px 0;
+  }
+  main {
+    flex-wrap: wrap;
+  }
+
+  /* Elements */
+  p {
+    margin: 30px 0;
+  }
+
+  /* Classes */
+  .card:nth-child(1) {
+    border-radius: 5px 5px 0 0;
+  }
+
+  .card:nth-child(2) {
+    border-radius: 0;
+  }
+  .card:nth-child(3) {
+    border-radius: 0 0 5px 5px;
+  }
+}

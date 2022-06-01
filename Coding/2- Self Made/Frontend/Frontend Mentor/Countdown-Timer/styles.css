@@ -1,0 +1,183 @@
+:root {
+  /* Background */
+  --bg: #19a1ad;
+  --card_bg: #fff;
+
+  /* Text */
+  --bold-color: #fff;
+  --font-color: #9a9da4;
+}
+
+body {
+  background: url(./images/bg-stars.svg);
+  background-color: #231d2b;
+  color: var(--font-color);
+  font-family: "Kumbh Sans", system-ui;
+  font-weight: 400;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* .testing {
+  background: white;
+  color: black;
+  padding: 30px;
+  height: 500px;
+  font-size: 30px;
+}
+.testing div:nth-child(1) {
+  background: yellow;
+}
+.testing div:nth-child(2) {
+  background: blue;
+  transform: scaleY(-1);
+  position: relative;
+  top: -40px;
+  animation: animate 1.5s infinite;
+  z-index: 1;
+}
+.flipped {
+  transform: scaleY(-1);
+}
+.testing div:nth-child(3) {
+  position: relative;
+  background: green;
+  transform: translateY(-40px);
+  z-index: 0;
+} 
+
+@keyframes animate {
+  0% {
+    transform: scaleY(-1);
+  }
+  100% {
+    transform: scaleY(1);
+    top: 0px;
+  }
+}
+*/
+
+/* The Elements */
+h1 {
+  color: var(--bold-color);
+  font-size: 20px;
+  font-weight: 700;
+  margin: 20px 0 0;
+}
+
+h1 span {
+  font-weight: 400;
+  color: var(--font-color);
+}
+
+p {
+  font-size: 18px;
+}
+
+/* Component Styling */
+.background {
+  position: relative;
+  top: -20px;
+  border-radius: 20px 20px 0 0;
+  width: 320px;
+  margin-bottom: -80px;
+  height: 140px;
+}
+.user {
+  margin-top: 10px;
+  width: 80px;
+  border-radius: 50px;
+  border: 5px solid white;
+  z-index: 1;
+}
+
+.stats p:nth-child(1) {
+  color: var(--bold-color);
+  font-weight: 700;
+}
+.stats p {
+  font-size: 18px;
+  margin: 2px;
+  text-align: center;
+}
+
+.info p,
+.stats p:nth-child(2) {
+  font-size: 13px;
+}
+
+.time {
+  margin: 0 30px;
+}
+
+.icons {
+  position: absolute;
+  left: 45vw;
+  bottom: 5vh;
+}
+
+.icons img {
+  margin: 10px;
+}
+
+.timer-bg {
+  background: blue;
+  padding: 35px 45px;
+}
+/* Custom Styling */
+.flex {
+  display: flex;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.vr-center {
+  align-items: center;
+}
+.hr-center {
+  justify-content: center;
+}
+
+.screen-height {
+  height: 100vh;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.full-width-element {
+  width: -webkit-fill-available;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.center-text {
+  text-align: center;
+}
+
+@media screen and (max-width: 425px) {
+  .screen:before {
+    left: -60vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .screen:before {
+    left: -30vw;
+  }
+}

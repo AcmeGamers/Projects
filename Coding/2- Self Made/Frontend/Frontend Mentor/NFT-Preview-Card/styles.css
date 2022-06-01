@@ -1,0 +1,163 @@
+:root {
+  /* Background */
+  --bg: hsl(217, 54%, 11%);
+  --card_bg: hsl(216, 50%, 16%);
+
+  /* Text */
+  --heading-color: #fff;
+  --font-color: #9a9da4;
+  --etherum: hsl(178, 100%, 50%);
+  --cyan: hsl(215, 51%, 70%);
+
+  /* widths */
+  --desktop-card-width: 275px;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--font-color);
+  font-family: "Outfit", system-ui;
+  margin: 0;
+}
+
+/* The Card */
+.card {
+  background: var(--card_bg);
+  border-radius: 20px;
+  box-shadow: 5px 5px 20px 0px #00000024;
+
+  padding: 20px 10px;
+  width: var(--desktop-card-width);
+}
+
+/* The Elements */
+h1 {
+  color: var(--heading-color);
+  font-size: 20px;
+  font-weight: 700;
+  margin: 20px 0 0;
+}
+
+p {
+  font-size: 18px;
+  font-weight: 100;
+}
+
+hr {
+  height: 1px;
+  margin: 0;
+  border: none;
+  width: 100%;
+  background-color: hsl(215, 32%, 27%);
+}
+
+/* Component Styling */
+.product {
+  background: url(images/image-equilibrium.jpg);
+  background-size: contain;
+  border-radius: 10px;
+  width: 250px;
+  height: 250px;
+}
+.product:before,
+.product:after {
+  content: "";
+  cursor: pointer;
+  display: block;
+  height: inherit;
+  width: inherit;
+  opacity: 0;
+  position: absolute;
+  transition: 0.5s ease all;
+}
+.product:before {
+  background: var(--etherum);
+  border-radius: 10px;
+}
+
+.product:after {
+  background: url("./images/icon-view.svg");
+  height: inherit;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.product:hover:before {
+  opacity: 0.6;
+}
+.product:hover:after {
+  opacity: 1;
+}
+
+.ethereum p {
+  color: var(--etherum);
+}
+
+.user {
+  margin-top: 10px;
+}
+.user p strong,
+h1 {
+  color: #fff;
+  transition: 0.5s ease all;
+  cursor: pointer;
+}
+.user p strong:hover,
+h1:hover {
+  color: var(--etherum);
+}
+
+.ethereum p,
+.date p,
+.user p {
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+.ethereum img,
+.date img,
+.user img {
+  height: fit-content;
+}
+
+.user img {
+  width: 30px;
+  border: 1px solid white;
+  border-radius: 50px;
+  margin-right: 10px;
+}
+
+/* Custom Styling */
+
+.flex {
+  display: flex;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.vr-center {
+  align-items: center;
+}
+.hr-center {
+  justify-content: center;
+}
+
+.screen-height {
+  height: 100vh;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.full-element-width {
+  width: -webkit-fill-available;
+}

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <title>Frontend Mentor | Interactive comments section</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="column hr-center">
+      <!-- Comment Card Container -->
+      <div id="root"></div>
+    </main>
+
+    <script type="text/babel">
+      // TODO: Will add remove comment feature
+      // TODO: Edit Comment Feature
+      // TODO: Reply feature
+      // TODO: Upvote Feature
+
+      // noComments() {
+      //   return (
+      //     <div className="no-comments">
+      //       <p>No comments yet. Be the first to comment!</p>
+      //     </div>
+      //   );
+      // }
+
+      class Card extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            editMode: 0,
+            voteScore: 0,
+            hasVoted: false,
+          };
+        }
+
+        render() {
+          return (
+            <div>
+              <div className={"card row " + this.props.class}>
+                <div className="column upvoting vr-center hr-center">
+                  <button
+                    className="vote upvote"
+                    onClick={() => {
+                      this.state.hasVoted == false &&
+                        this.setState({
+                          hasVoted: true,
+                          voteScore: 1,
+                        });
+
+                      this.props.vote(this.props.id, this.state.voteScore);
+                    }}
+                  >
+                    +
+                  </button>
+                  <span>{this.props.score}</span>
+                  <button
+                    className="vote downvote"
+                    onClick={() => {
+                      this.state.hasVoted == true &&
+                        this.setState({
+                          hasVoted: false,
+                          voteScore: -1,
+                        });
+
+                      this.props.vote(this.props.id, this.state.voteScore);
+                    }}
+                  >
+                    -
+                  </button>
+                </div>
+
+                <div className="full-width">
+                  <div className="row space-between hr-center">
+                    <div className="user-info row hr-center">
+                      <img className="user" src={this.props.image} alt="" />
+                      <a className="username mg-l-15px-r-10px">
+                        {this.props.username}
+                      </a>
+                      {this.props.currentUser &&
+                        this.props.username ==
+                          this.props.currentUser.username && (
+                          <p className="tag mg-r-10px">you</p>
+                        )}
+                      <p className="period">{this.props.createdAt}</p>
+                    </div>
+
+                    {this.props.currentUser &&
+                    this.props.username == this.props.currentUser.username ? (
+                      <div>
+                        <button
+                          className="btn btn-delete"
+                          onClick={() => {
+                            this.props.deleteComment(this.props.id);
+                          }}
+                        >
+                          <img src="./images/icon-delete.svg" /> Delete
+                        </button>
+                        <button
+                          className="btn btn-edit"
+                          onClick={() => {
+                            this.setState({
+                              editMode: this.state.editMode ? 0 : 1,
+                            });
+                          }}
+                        >
+                          <img src="./images/icon-edit.svg" /> Edit
+                        </button>
+                      </div>
+                    ) : (
+                      <button className="btn btn-reply">
+                        <img src="./images/icon-reply.svg" /> Reply
+                      </button>
+                    )}
+                  </div>
+                  {this.props.currentUser &&
+                  this.props.username == this.props.currentUser.username ? (
+                    <div>
+                      <textarea
+                        name="text"
+                        placeholder="Add a comment..."
+                        className={this.state.editMode || "hidden"}
+                        cols="30"
+                        rows="10"
+                      ></textarea>
+                      <p
+                        className={`comment ${this.state.editMode && "hidden"}`}
+                      >
+                        {this.props.content}
+                      </p>
+                    </div>
+                  ) : (
+                    // have to add a button above
+                    <p className="comment">{this.props.content}</p>
+                  )}
+                </div>
+              </div>
+              {this.props.children && (
+                <div className="card-reply-container column hr-right">
+                  {this.props.children}
+                </div>
+              )}
+            </div>
+          );
+        }
+      }
+      function CardReply(props) {
+        return (
+          <Card
+            key={props.id}
+            id={props.id}
+            score={props.score}
+            username={props.username}
+            createdAt={props.createdAt}
+            content={props.content}
+            image={props.image}
+            currentUser={props.currentUser}
+            vote={props.vote}
+            deleteComment={props.deleteComment}
+            class="card-reply"
+          />
+        );
+      }
+
+      class CommentCard extends React.Component {
+        constructor(props) {
+          super(props);
+          this.userComment = React.createRef();
+          this.state = {
+            comments: props.comments,
+            currentUser: props.currentUser,
+            value: "",
+          };
+        }
+
+        render() {
+          return (
+            <div className="card row vr-top space-between">
+              <img
+                className="user"
+                src={this.state.currentUser.image.png}
+                alt=""
+              />
+              <textarea
+                name="text"
+                type="text"
+                placeholder="Add a comment..."
+                className="mg-lr-10px"
+                cols="30"
+                rows="10"
+                ref={this.userComment}
+                onChange={(e) => this.setState({ value: e.target.value })}
+                value={this.state.value}
+              ></textarea>
+
+              <button
+                className="btn btn-send"
+                disabled={!this.state.value}
+                onClick={() => {
+                  this.props.commentHandler(this.userComment.current.value);
+                  this.setState({ value: "" });
+                }}
+              >
+                Send
+              </button>
+            </div>
+          );
+        }
+      }
+
+      class App extends React.Component {
+        constructor(props) {
+          super(props);
+          this.commentHandler = this.commentHandler.bind(this);
+          this.state = {
+            currentUser: false,
+            comments: false,
+          };
+        }
+
+        checkCommentDate(date) {
+          const currentDate = new Date();
+          const commentDate = new Date(date);
+          const diffTime = Math.abs(currentDate - commentDate);
+          const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)) - 1;
+          if (diffDays === 0) {
+            return "today";
+          } else if (diffDays === 1) {
+            return "yesterday";
+          } else if (diffDays > 1 && diffDays < 7) {
+            return diffDays + " days ago";
+          } else if (diffDays >= 7 && diffDays < 30) {
+            return Math.ceil(diffDays / 7) + " weeks ago";
+          } else if (diffDays >= 30) {
+            return Math.ceil(diffDays / 30) + " months ago";
+          }
+        }
+
+        commentHandler(comment) {
+          this.setState({
+            comments: [
+              ...this.state.comments,
+              {
+                id: "a" + (this.state.comments.length + 1),
+                score: 0,
+                createdAt: this.checkCommentDate(new Date().toLocaleString()),
+                content: comment,
+                user: {
+                  image: {
+                    png: this.state.currentUser.image.png,
+                    webp: this.state.currentUser.image.webp,
+                  },
+                  username: this.state.currentUser.username,
+                },
+                replies: [],
+              },
+            ],
+          });
+        }
+        deleteComment(id) {
+          console.log(id);
+          this.setState({
+            comments: this.state.comments.filter((comment) => {
+              return comment.id !== id;
+            }),
+          });
+
+          // TODO: Will add remove reply feature
+        }
+
+        editComment(id) {
+          console.log(id);
+          this.setState({
+            comments: this.state.comments.map((comment) => {
+              if (comment.id === id) {
+                return {
+                  ...comment,
+                  content: "",
+                };
+              } else {
+                return comment;
+              }
+            }),
+          });
+        }
+
+        vote(id, vote) {
+          this.setState({
+            comments: this.state.comments.map((comment) => {
+              if (comment.id === id) {
+                return {
+                  ...comment,
+                  score: comment.score + vote,
+                };
+              } else {
+                return comment;
+              }
+            }),
+          });
+        }
+
+        componentDidMount() {
+          fetch(
+            "https://raw.githubusercontent.com/AcmeGamers/Interactive-Comments-Section/master/data.json"
+          )
+            .then((response) => response.json())
+            .then((data) => {
+              this.setState({
+                currentUser: data.currentUser,
+                comments: data.comments,
+              });
+            });
+        }
+
+        render() {
+          return (
+            <div>
+              {this.state.comments &&
+                this.state.comments.map((record) => (
+                  <Card
+                    key={record.id}
+                    id={record.id}
+                    score={record.score}
+                    username={record.user.username}
+                    createdAt={record.createdAt}
+                    content={record.content}
+                    image={record.user.image.png}
+                    currentUser={this.state.currentUser}
+                    vote={this.vote.bind(this)}
+                    deleteComment={this.deleteComment.bind(this)}
+                  >
+                    {record.replies == []
+                      ? ""
+                      : record.replies.map((reply) => (
+                          <CardReply
+                            key={reply.id}
+                            id={reply.id}
+                            score={reply.score}
+                            username={reply.user.username}
+                            createdAt={reply.createdAt}
+                            content={reply.content}
+                            image={reply.user.image.png}
+                            currentUser={this.state.currentUser}
+                            vote={this.vote.bind(this)}
+                            deleteComment={this.deleteComment.bind(this)}
+                          />
+                        ))}
+                  </Card>
+                ))}
+              {this.state.comments && (
+                <CommentCard
+                  currentUser={this.state.currentUser}
+                  comments={this.state.comments}
+                  commentHandler={this.commentHandler}
+                />
+              )}
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>

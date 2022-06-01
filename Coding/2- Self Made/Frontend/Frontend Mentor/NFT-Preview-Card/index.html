@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Outfit:300,400,600"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Frontend Mentor | NFT preview card component</title>
+  </head>
+  <body class="screen-height flex vr-center hr-center">
+    <!-- Card -->
+    <div class="card column vr-center">
+      <div class="product"></div>
+      <div style="width: 250px">
+        <div>
+          <h1>Equilibrium #3429</h1>
+          <p>Our Equilibrium collection promotes balance and calm.</p>
+        </div>
+
+        <div class="row space-between full-element-width">
+          <!-- Ethereum -->
+          <div class="ethereum row vr-center">
+            <img
+              src="./images/icon-ethereum.svg"
+              style="width: 10px"
+              alt="Ethereum Icon"
+            />
+            <p>0.041 ETH</p>
+          </div>
+          <!-- Days left -->
+          <div class="date row vr-center">
+            <img
+              src="./images/icon-clock.svg"
+              style="width: 20px"
+              alt="Clock Icon"
+            />
+            <p>3 days left</p>
+          </div>
+        </div>
+        <hr class="full-element-width" />
+        <!-- By Whom -->
+        <div class="user row vr-center full-element-width">
+          <img src="./images/image-avatar.png" alt="User Icon" />
+          <p>Creation of <strong>Jules Wyvern</strong></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

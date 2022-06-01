@@ -1,0 +1,142 @@
+:root {
+  --bg: #0a0c1b;
+  --white: #ffffff;
+
+  --primary: rgb(166, 96, 214);
+  --primary-dark: #1c1938;
+  --primary-shadow: rgba(167, 96, 214, 0.63);
+
+  --text-color: #b0afc3;
+
+  --font-1: "Inter", system-ui;
+  --font-2: "Lexend Deca", system-ui;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-color);
+  font-family: var(--font-1);
+  font-size: 15px;
+}
+
+/* Card Styling */
+.card {
+  background: var(--primary-dark);
+  height: 445px;
+  border-radius: 5px 0 0 5px;
+  padding: 0 25px;
+}
+.card div {
+  width: 75%;
+  padding-inline-start: 40px;
+}
+.card ul {
+  width: 70%;
+}
+/* Image Styling */
+.image {
+  height: 445px;
+  border-radius: 0 5px 5px 0;
+  background: linear-gradient(rgb(67 0 110 / 64%), var(--primary-shadow)),
+    url(images/image-header-desktop.jpg);
+  filter: contrast(1.2);
+}
+
+/* Text Appearance */
+h1 {
+  color: var(--white);
+  letter-spacing: 1.3px;
+  font-size: 31px;
+}
+h1 span {
+  color: var(--primary);
+}
+p {
+  line-height: 1.7;
+}
+
+.list li {
+  font-weight: 900;
+  color: white;
+  font-size: 25px;
+}
+.list li span {
+  padding: 5px 0;
+  font-weight: 300;
+  color: #9291a3;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-family: var(--font-2);
+}
+
+.card,
+.image {
+  width: 35%;
+}
+
+/* Predefined CSS */
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.hr-center {
+  align-items: center;
+}
+.vr-center {
+  justify-content: center;
+}
+.full-width {
+  width: -webkit-fill-available;
+}
+.space-between {
+  justify-content: space-between;
+}
+.space-evenly {
+  justify-content: space-evenly;
+}
+.screen-height {
+  height: 100vh;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+/* media query */
+@media screen and (max-width: 425px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    height: auto !important;
+  }
+
+  .image {
+    order: 1;
+    border-radius: 5px 5px 0 0;
+  }
+
+  .card,
+  .image {
+    width: 90%;
+  }
+
+  .card {
+    order: 2;
+    padding: 25px 0;
+    text-align: center;
+    height: inherit;
+    margin-bottom: 100px;
+    border-radius: 0 0 5px 5px;
+  }
+  .list {
+    flex-direction: column;
+  }
+  .list li {
+    margin-bottom: 25px;
+  }
+}
